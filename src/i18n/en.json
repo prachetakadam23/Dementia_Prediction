@@ -1,0 +1,103 @@
+{
+  "app": {
+    "title": "Dementia Test",
+    "home": "Home",
+    "start_test": "Start Test",
+    "results": "Results",
+    "about": "About",
+    "start_button": "Click to Start Test",
+    "brand": "DementiaPredict",
+    "retake": "Retake Test"
+  },
+  "nav": {
+    "brand": "DementiaPredict"
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "copyright": "© {{year}} DementiaPredict. All rights reserved."
+  },
+  "home": {
+    "subtitle": "Take a series of simple cognitive tests to assess your memory, attention, and recall abilities. Early detection is key to managing dementia effectively.",
+    "stats_title": "Dementia Statistics",
+    "stats": [
+      { "title": "50 Million+", "description": "People worldwide are living with dementia." },
+      { "title": "Every 3 Seconds", "description": "Someone in the world develops dementia." },
+      { "title": "Preventable Risk", "description": "Up to 40% of dementia cases could be prevented by lifestyle changes." }
+    ]
+  },
+  "home_stats": {
+    "items": [
+      { "title": "50 Million+", "description": "People worldwide are living with dementia." },
+      { "title": "Every 3 Seconds", "description": "Someone in the world develops dementia." },
+      { "title": "Preventable Risk", "description": "Up to 40% of dementia cases could be prevented by lifestyle changes." }
+    ]
+  },
+  "about": {
+    "title": "About the Dementia Test",
+    "paragraph": "This test suite is designed to help assess cognitive function related to memory, attention, and verbal fluency. Completing all three interactive tests provides a combined score that can give insights into dementia risk. Early detection is key for effective management.",
+    "how_scores": "How Scores Are Evaluated",
+    "why_early": "Why Early Testing Helps",
+    "speech_test": "Speech Test: Scored based on word count, clarity, and fluency.",
+    "memory_game": "Memory Game: Each matched pair increases your score; faster completion gives higher points.",
+    "cue_card": "Cue Card Game: Points awarded for correct positions in the sequence recall test.",
+    "overall_result": "Overall Result: The system calculates an average of all three scores and predicts dementia risk."
+  },
+  "testpage": {
+    "select_game": "Select a Game to Start",
+    "speech_title": "Speech Analysis",
+    "speech_desc": "Analyze your speech for memory and clarity.",
+    "memory_title": "Memory Game",
+    "memory_desc": "Test your memory with fun interactive exercises.",
+    "cue_title": "Cue Card Game",
+    "cue_desc": "Improve attention and recall with cue cards."
+  },
+  "speech": {
+    "title": "Speech Test - Tell About Yourself",
+    "prompt": "Speak clearly when prompted. The test will analyze your words for memory and clarity. Click \u201cStart Speaking\u201d to begin.",
+    "start": "Start Speaking",
+    "listening": "Listening...",
+    "you_said": "You said:",
+    "finish": "Finish & Go to Memory Game",
+    "no_support": "Your browser does not support speech recognition.",
+    "instructions": "Speak the following words clearly when prompted.",
+    "start_recording": "Start Recording",
+    "click_to_speak": "Click to speak",
+    "unsupported": "Your browser does not support speech recognition."
+  },
+  "memory": {
+    "title": "Memory Game",
+    "instructions": "Match all pairs of numbers.",
+    "finish": "Finish Memory Game",
+    "values": ["1", "2", "3", "4"]
+  },
+  "cue": {
+    "title": "Sequence Recall Game",
+    "instructions": "Memorize the sequence of words. You have 5 seconds to view it.",
+    "click_cards": "Click the cards in the correct order:",
+    "your_sequence": "Your sequence:",
+    "finish": "Finish Game",
+    "sequence": ["Apple", "Dog", "Banana", "Chair", "Orange", "Book"],
+    "click_order": "Click the cards in the correct order:",
+    "title_alt": "Sequence Recall Game",
+    "finish_label": "Finish Game"
+  },
+  "result": {
+    "title": "Test Results",
+    "scores": "Scores",
+    "overall_score": "Overall Score",
+    "speech_label": "Speech Test",
+    "memory_label": "Memory Game",
+    "cue_label": "Cue Card Game",
+    "overall_label": "Overall Score",
+    "retake": "Retake Test",
+    "low_risk": "Low risk of dementia",
+    "moderate_risk": "Moderate risk of dementia",
+    "high_risk": "High risk of dementia"
+  },
+  "common": {
+    "score_label": "Score: {{score}}",
+    "play_now": "Play Now"
+  }
+}

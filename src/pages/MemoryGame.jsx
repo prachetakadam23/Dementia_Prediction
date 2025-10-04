@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { ScoreContext } from "../context/ScoreContext";
+import { useTranslation } from "../i18n/LanguageContext";
 
 const MemoryGame = () => {
   const navigate = useNavigate();
   const { updateScore } = useContext(ScoreContext);
 
-  const cardValues = [1, 2, 3, 4];
+  const { t, lang } = useTranslation();
+  // localized card values (fall back to numbers)
+  const cardValues = t('memory.values') || [1, 2, 3, 4];
   const [cards, setCards] = useState([]);
   const [firstCard, setFirstCard] = useState(null);
   const [secondCard, setSecondCard] = useState(null);
@@ -20,7 +23,7 @@ const MemoryGame = () => {
       .sort(() => Math.random() - 0.5)
       .map((value, index) => ({ id: index, value, matched: false }));
     setCards(shuffled);
-  }, []);
+  }, [lang, cardValues]);
 
   const handleChoice = (card) => {
     if (disabled) return;
@@ -63,10 +66,10 @@ const MemoryGame = () => {
       <Navbar />
       <main className="flex flex-col items-center flex-grow py-12 px-4 md:px-20">
         <h1 className="text-4xl font-bold mb-10 text-gray-900 text-center">
-          Memory Game
+          {t('memory.title') || 'Memory Game'}
         </h1>
         <p className="text-gray-700 mb-6 text-center">
-          Match all pairs of numbers.
+          {t('memory.instructions') || 'Match all pairs of numbers.'}
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -80,8 +83,22 @@ const MemoryGame = () => {
               }`}
               onClick={() => handleChoice(card)}
             >
-              {(card.matched || card === firstCard || card === secondCard) &&
-                card.value}
+        {(card.matched || card === firstCard || card === secondCard) &&
+          // If the translation provides strings (like Devanagari digits), show them.
+          // Otherwise, if the value looks numeric, format it for the current locale (hi-IN/mr-IN) so Hindi/Marathi show native digits.
+          (() => {
+            const val = card.value;
+            const str = String(val);
+            const isNumeric = /^\d+$/.test(str);
+            if (!isNumeric) return val;
+            // choose locale mapping for language codes used in app
+            const locale = lang === 'hi' ? 'hi-IN' : lang === 'mr' ? 'mr-IN' : 'en-US';
+            try {
+              return new Intl.NumberFormat(locale, { useGrouping: false }).format(Number(str));
+            } catch (e) {
+              return str;
+            }
+          })()}
             </div>
           ))}
         </div>

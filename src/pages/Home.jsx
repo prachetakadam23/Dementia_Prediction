@@ -2,15 +2,13 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
-const dementiaStats = [
-  { title: "50 Million+", description: "People worldwide are living with dementia." },
-  { title: "Every 3 Seconds", description: "Someone in the world develops dementia." },
-  { title: "Preventable Risk", description: "Up to 40% of dementia cases could be prevented by lifestyle changes." },
-];
+import { useTranslation } from "../i18n/LanguageContext";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const dementiaStats = t('home').stats || [];
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -19,23 +17,22 @@ const Home = () => {
       {/* Hero Section */}
       <main className="flex flex-col items-center justify-center flex-grow py-20 px-4 md:px-20">
         <h1 className="text-5xl font-bold mb-6 text-gray-900 text-center">
-          Dementia Test
+          {t('app.title')}
         </h1>
         <p className="text-gray-700 mb-10 text-center max-w-2xl">
-          Take a series of simple cognitive tests to assess your memory, attention, and recall abilities. 
-          Early detection is key to managing dementia effectively.
+          {t('home.subtitle')}
         </p>
         <button
           onClick={() => navigate("/speech")}
           className="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105 shadow-lg"
         >
-          Click to Start Test
+          {t('app.start_button')}
         </button>
 
         {/* Dementia Statistics Section */}
         <section className="mt-20 w-full max-w-5xl">
           <h2 className="text-3xl font-bold mb-10 text-center text-gray-900">
-            Dementia Statistics
+            {t('home.stats_title')}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {dementiaStats.map((stat, idx) => (
